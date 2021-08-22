@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.0.8/css/boxicons.min.css' rel='stylesheet'>
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!--datadables-->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
+
+    <title>Audiovam</title>
+  </head>
+  <body>
+
+    <!--nav bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Audiovam center</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/registro_aparatos">Registro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Movimientos</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    <!--nav bar -->
+
+        <!--form crear aparato -->
+      <div class="container mt-4">
+        <div class="card border-secundary">
+            <div class="card-header">Nuevo aparato</div>
+            <div class="card-body">
+                <form class="mt-4" action="/save_aparato" method="POST">
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Nombre: </label>
+                        <input type="text" class="form-control" id="Nombre" name="Nombre" tabindex="1"  onkeyup = "mayus(this);">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Apellido(s): </label>
+                        <input type="text" onkeyup = "mayus(this);" class="form-control text-uppercase" id="Apellido" name="Apellido" tabindex="2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Alias: </label>
+                        <input type="text" class="form-control text-uppercase" id="Alias" name="Alias" tabindex="3"  onkeyup = "mayus(this);">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Teléfono: </label>
+                        <input type="text" class="form-control text-uppercase" id="Telefono" name="Telefono" tabindex="4"  onkeyup = "mayus(this);"> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Fecha: </label>
+                        <input type="date" class="form-control text-uppercase" id="Fecha" name="Fecha" tabindex="5"  onkeyup = "mayus(this);">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Aparato: </label>
+                        <input type="text" class="form-control text-uppercase" id="Aparato" name="Aparato" tabindex="6"  onkeyup = "mayus(this);">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Marca: </label>
+                        <input type="text" class="form-control text-uppercase" id="Marca" name="Marca" tabindex="7"  onkeyup = "mayus(this);">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Falla: </label>
+                        <input type="text" class="form-control text-uppercase" id="Falla" name="Falla" tabindex="8"  onkeyup = "mayus(this);">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Observaciones: </label>
+                        <input type="text" class="form-control text-uppercase" id="Observaciones" name="Observaciones" tabindex="9"  onkeyup = "mayus(this);">
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Estado: </label>
+                        <select  id="Estado" name="Estado" class="form-select" tabindex="10">
+                            <option value="En proceso">En proceso</option>
+                            <option value="Listo">Listo</option>
+                            <option value="Detenido">Detenido</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="user" class="form-label">Notas: </label>
+                        <input type="text" class="form-control text-uppercase" id="Notas" name="Notas" tabindex="9"  onkeyup = "mayus(this);">
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-gradient" tabindex="3">Guardar</button>
+                    <a href="/registro_aparatos" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+            function mayus(e) {
+            e.value = e.value.toUpperCase();
+         }
+    </script>
+
+
+  </body>
+</html>
