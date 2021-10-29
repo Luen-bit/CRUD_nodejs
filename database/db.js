@@ -8,10 +8,14 @@ const conexion = mysql.createConnection({
 
 conexion.connect((error)=>{
     if(error){
-        console.log('El erro de conexion es: ' +error);
+        console.log('El error de conexion es: ' + error);
         return
     }
     console.log('Se ha conectado a la BD MySQL')
 })
 
 module.exports = conexion;
+
+
+
+

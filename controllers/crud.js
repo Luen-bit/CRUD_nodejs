@@ -4,7 +4,7 @@ const conexion = require('../database/db');
 exports.save = (req,res)=>{
     const Nombre = req.body.Nombre;
     const Rol = req.body.Rol;
-    conexion.query("INSERT INTO users SET ?", {Nombre:Nombre, Rol:Rol},(error,results)=>{
+    conexion.query("INSERT INTO aparatos SET ?", {Nombre:Nombre, Rol:Rol},(error,results)=>{
         if(error){
             console.log(error);
         }else{
@@ -22,7 +22,7 @@ exports.update = (req,res)=>{
     const user = req.body.Nombre;
     const rol = req.body.Rol;
     console.log(id+user+rol);
-    conexion.query('UPDATE users SET ? WHERE ID =?', [{Nombre:user, Rol:rol}, id], (error,results)=>{
+    conexion.query('UPDATE aparatos SET ? WHERE ID =?', [{Nombre:user, Rol:rol}, id], (error,results)=>{
         if(error){
             console.log(error);
         }else{
@@ -57,7 +57,7 @@ exports.save_aparato = (req,res)=>{
 }
 
 exports.update_aparato = (req,res)=>{
-    const id = req.body.id_cliente;
+    const id = req.body.id;
     const Nombre = req.body.nombre_cliente;
     const Apellido = req.body.apellido_cliente;
     const Alias = req.body.alias;
@@ -69,7 +69,7 @@ exports.update_aparato = (req,res)=>{
     const Observaciones = req.body.observaciones;
     const Estado = req.body.estado;
     const Notas = req.body.notas;
-    console.log(id+user+rol);
+    console.log(id+nombre_cliente+ apellido_cliente + Alias + Telefono);
     conexion.query('UPDATE aparato SET ? WHERE id_cliente =?', [{nombre_cliente:Nombre, apellido_cliente:Apellido,
                     alias:Alias,telefono_cliente:Telefono,fecha_recepcion:Fecha,aparato:Aparato,
                 marca:Marca,falla:Falla,observaciones:Observaciones,estado:Estado,notas:Notas}, id], (error,results)=>{

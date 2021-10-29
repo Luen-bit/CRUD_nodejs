@@ -50,7 +50,7 @@
           <div class="card-header">Editar aparato</div>
           <div class="card-body">
               <form class="mt-4" action="/update_aparato" method="POST">
-                <input id="id_cliente" name="id_cliente" value="<%= aparato.id_cliente %>" hidden>
+                <input id="id" name="id" value="<%= aparato.id %>" hidden>
                   <div class="mb-3">
                       <label for="aparato" class="form-label">Nombre: </label>
                       <input type="text" value =" <%= aparato.nombre_cliente %>" class="form-control" id="Nombre" name="Nombre" tabindex="1"  onkeyup = "mayus(this);">
@@ -134,8 +134,7 @@
           timer: 1500
           
         })
-        console.log('lol');
-        setTimeout($document).form1.submit(),2000);
+
       }
     </script>
 

@@ -8,7 +8,7 @@ const conexion = require('./database/db')
 //ruta raiz ejemplo select all 
 router.get('/', (req,res)=>{
     
-   conexion.query('SELECT * FROM USERS' ,(error,results)=>{
+   conexion.query('SELECT * FROM aparatos' ,(error,results)=>{
        if(error){
            throw error;
        }else{
@@ -27,7 +27,7 @@ router.get('/create',(req,res)=>{
 router.get('/edit/:id',(req,res)=>{
     const id = req.params.id;
     console.log(id);
-    conexion.query("SELECT * FROM users WHERE ID=?", [id], (error,results)=>{
+    conexion.query("SELECT * FROM aparatos WHERE ID=?", [id], (error,results)=>{
         if (error){
             console.log(error);
         }else{  
@@ -40,7 +40,7 @@ router.get('/edit/:id',(req,res)=>{
 
 router.get('/delete/:id', (req,res)=>{
     const id = req.params.id;
-    conexion.query("DELETE FROM users WHERE id = ?", [id],(error,results)=>{
+    conexion.query("DELETE FROM aparatos WHERE id = ?", [id],(error,results)=>{
         if(error){
             console.log(error);
         }else{
@@ -80,7 +80,7 @@ router.get('/registro_aparatos', (req,res)=>{
  router.get('/edit_aparato/:id',(req,res)=>{
     const id = req.params.id;
     console.log(id);
-    conexion.query("SELECT * FROM aparatos WHERE id_cliente=?", [id], (error,results)=>{
+    conexion.query("SELECT * FROM aparatos WHERE id=?", [id], (error,results)=>{
         if (error){
             console.log(error);
         }else{  
@@ -100,7 +100,7 @@ router.get('/create_aparato',(req,res)=>{
 
 router.get('/delete_aparato/:id', (req,res)=>{
     const id = req.params.id;
-    conexion.query("DELETE FROM aparatos WHERE id_cliente = ?", [id],(error,results)=>{
+    conexion.query("DELETE FROM aparatos WHERE id = ?", [id],(error,results)=>{
         if(error){
             console.log(error);
         }else{
